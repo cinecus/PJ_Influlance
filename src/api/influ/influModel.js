@@ -68,14 +68,14 @@ class InfluModel {
             throw new Error("ไม่สามารถดึงข้อมูลพอร์ตโฟลิโอได้");
         }
     }
-
+    //Review : ควรแยก modules job ออกมาเป็นอีก folder นึง
     async getJobs() {
         try {
             const jobs = await JobSchema.find({});
             return jobs;
         } catch (error) {
             console.error("Error in getJobs:", error.message); // แสดงข้อความของข้อผิดพลาด
-            console.error(error); 
+            console.error(error);
             throw new Error("ไม่สามารถดึงข้อมูลงานได้");
         }
     }

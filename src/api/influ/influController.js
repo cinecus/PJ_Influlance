@@ -54,6 +54,7 @@ class InfluController {
     }
     async getProfile(req, res) {
         try {
+            //Review : ข้อมูล Profile ต้องใช้ Token แทน เพื่อความปลอดภัย
             const { email } = req.query; // ใช้ email ในการค้นหาผู้ใช้
             if (!email) {
                 return res.status(400).json({
@@ -129,6 +130,7 @@ class InfluController {
     }
     async addPortfolio(req, res) {
         try {
+             //Review : ข้อมูล Profile ต้องใช้ Token แทน เพื่อความปลอดภัย
             const { email, title, description, imageUrl } = req.body;
 
             if (!email || !title || !description || !imageUrl) {
@@ -153,6 +155,7 @@ class InfluController {
 
     async getPortfolio(req, res) {
         try {
+             //Review : ข้อมูล Profile ต้องใช้ Token แทน เพื่อความปลอดภัย
             const { email } = req.query;
             if (!email) {
                 return res.status(400).json({
@@ -181,8 +184,9 @@ class InfluController {
             });
         }
     }
-
+    //Review : ควรแยก modules job ออกมาเป็นอีก folder นึง
     async getJobs(req, res) {
+         //Review : ข้อมูล Profile ต้องใช้ Token แทน เพื่อความปลอดภัย
         try {
             const jobs = await influModel.getJobs();
 
@@ -207,6 +211,7 @@ class InfluController {
     }
     
     async enrollJob(req, res) {
+         //Review : ข้อมูล Profile ต้องใช้ Token แทน เพื่อความปลอดภัย
         try {
             const { email, jobID } = req.body;
 

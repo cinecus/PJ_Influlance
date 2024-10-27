@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const moment = require('moment')
 const bcrypt = require('bcrypt'); // เพิ่มบรรทัดนี้
 
+// Review : ควรแยก file portfolioSchema ออกมาเป็นอีก file นึง => portfolioSchema.js
 const portfolioSchema = new mongoose.Schema({
     title: { type: String, required: true },
     description: { type: String, required: true },
@@ -23,6 +24,7 @@ const influSchema = mongoose.Schema({
 
 exports.InfluSchema = mongoose.model('Influencer', influSchema)
 
+// Review : ควรแยก modules job ออกมาเป็นอีก folder นึง
 const jobSchema = new mongoose.Schema({
     jobID: { type: Number, required: true, unique: true },
     marketerID: { type: Number, required: true },
